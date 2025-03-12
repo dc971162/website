@@ -16,11 +16,11 @@ current_ip=$(curl -s ifconfig.me)
 
 echo "Current external IP: $current_ip"
 # Get the resolved IP of the provided domain from google dns server
-domain_ip=$(dig +short @8.8.8.8 "$domain" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1)
+domain_ip=$(dig +short @8.8.8.8 "$yournewdomain" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1)
 
 # Check if the domain resolved successfully
 if [ -z "$domain_ip" ]; then
-  echo "Error: Unable to resolve domain IP for $domain."
+  echo "Error: Unable to resolve domain IP for $yournewdomain."
   exit 1
 fi
 
