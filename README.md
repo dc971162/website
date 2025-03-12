@@ -1,5 +1,5 @@
 # website
-Auto setup a HTTPS web server with a fake website hosting
+Auto setup a HTTPS web server and host a website template
 # Usage
 Run as `root` user, replace "example.com" to your domain
 ```
