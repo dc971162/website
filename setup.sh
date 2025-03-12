@@ -48,8 +48,6 @@ sed -i 's,${APACHE_LOG_DIR},/var/www/'"${yournewdomain}"'/logs,g' /etc/apache2/s
 # Create backup
 cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bk
 sed -i "/<Directory \/var\/www\/>/a Options FollowSymLinks\n\tAllowOverride None\n\tRequire all granted\n</Directory>\n\n<Directory \/var\/www\/${yournewdomain}\/html>" /etc/apache2/apache2.conf
-# disable Directory listing
-sed -i "s/Indexes/-Indexes/g" /etc/apache2/apache2.conf 
 
 echo "Restarting Apache Service"
 # Config site and Restart Apache service
